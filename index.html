@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pic randomizer</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="src/styles.css" />
+		<link rel="icon" href="randomize.png" />
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<!--
+			Wrapper:
+			  Wraps everything on the page
+		-->
+		<div id="wrapper">
+			<!--
+				Header:
+				  Title of website with a colored background
+			-->
+			<header><h1>Random picture generator</h1></header>
+
+			<!--
+				Main section:
+				  Random picture and buttons
+			-->
+			<section id="main_section">
+				<!--
+					Random picture:
+					  This is the area where the random picture is displayed
+				-->
+				<article id="random_pic_area">
+					<img id="random_pic" :src="src" alt="Random image" />
+				</article>
+
+				<!--
+					Buttons:
+					  First button marks the picture as favorite, second removes it from favorites. Only one of them is displayed at a time.
+					  Last button randomizes another picture
+				-->
+				<aside id="buttons">
+					<img
+						v-if="in_fav === false"
+						id="like_button"
+						src="icons/like.png"
+						alt="like_button"
+						title="Add to favorites"
+						width="90px"
+						@click="handleButton($event)"
+					/><img
+						v-else
+						id="cancel_button"
+						src="icons/cancel.png"
+						alt="cancel_button"
+						title="Remove from favorites"
+						width="90px"
+						@click="handleButton($event)"
+					/><img
+						id="randomize_button"
+						src="icons/randomize.png"
+						alt="randomize_button"
+						title="Randomize another picture"
+						width="90px"
+						@click="handleButton($event)"
+					/>
+				</aside>
+			</section>
+
+			<!--
+				Favorite section:
+				  The area where pictures marked as favorites are shown in miniature
+			-->
+			<section id="favorite_section">
+				<h2 id="fav_title">Favorites</h2>
+				<div id="fav_area">
+					<img class="fav_pic" v-for="item in favorites" :src="item.src" :alt="item.alt" @click="handleClick($event)" />
+				</div>
+			</section>
+		</div>
+
+		<footer>
+			<div id="credits">
+				<p>Créé par Mériadec Lantonnet, étudiant à 42</p>
+				<nav id="credit_links">
+					<a href="https://github.com/mlantonn" title="GitHub">GitHub</a> -
+					<a
+						href="https://www.linkedin.com/in/m%C3%A9riadec-lantonnet-931913159/"
+						title="LinkedIn"
+						>LinkedIn</a
+					>
+				</nav>
+			</div>
+		</footer>
+
+		<!-- Script -->
+		<script src="src/index.js"></script>
+	</body>
+</html>

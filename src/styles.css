@@ -1,0 +1,125 @@
+/****    Block page    ****/
+
+body,
+html {
+	font-family: sans-serif, Arial, serif;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
+}
+
+/****    Header    ****/
+
+header {
+	background: #7451eb;
+	min-height: 100px;
+	width: 100%;
+	display: flex;
+	margin-bottom: 20px;
+}
+
+header h1 {
+	margin: auto;
+	text-align: center;
+	color: white;
+	font-size: 1.7em;
+	font-style: italic;
+}
+
+/***    Main block    ***/
+
+#main_section {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+#random_pic_area {
+	margin: auto;
+	padding: 10px;
+}
+
+#buttons {
+	margin: auto;
+}
+
+#buttons:hover {
+	cursor: pointer;
+}
+
+/***   Favorites    ***/
+
+#favorite_section {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 10px;
+	padding-bottom: 30px;
+}
+
+#fav_area {
+	margin: auto;
+	border: 3px solid #7451eb;
+	padding: 4px;
+	width: 632px;
+	min-height: 107.5px;
+}
+
+#fav_title {
+	color: #7451eb;
+	margin: 0px;
+	padding: 8px;
+	font-size: 1.2em;
+}
+
+#fav_area img {
+	padding: 4px;
+	padding-bottom: 0px;
+}
+
+#fav_area img:hover {
+	cursor: pointer;
+}
+
+/***    Footer    ***/
+
+footer {
+	height: 50px;
+	flex-shrink: 0;
+	font-style: italic;
+	display: flex;
+	color: #eee;
+	background-color: #7451eb;
+}
+
+#credits {
+	width: 550px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 0px;
+}
+
+#credits p,
+#credits nav {
+	margin: auto;
+	flex: auto;
+	padding: 2px;
+	font-size: 0.9em;
+}
+
+#credits nav a {
+	color: #eee;
+}
+
+#credits nav a:hover {
+	text-decoration: none;
+}
